@@ -1,0 +1,23 @@
+version: "3.9"
+services:
+  web_cam:
+    container_name: web_cam
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "5000:5000"
+    privileged: true
+    volumes:
+      - .:/code
+      - /opt/vc:/opt/vc
+    environment:
+      FLASK_ENV: development
+      LD_LIBRARY_PATH: /opt/vc/lib
+      DISPLAY:
+    image: web_cam
+    devices: 
+        - "/dev/video0:/dev/video0"
+        - "/dev/vchiq:/dev/vchiq"
+  redis:
+    image: "redis:alpine"
