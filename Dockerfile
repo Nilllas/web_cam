@@ -1,4 +1,4 @@
-FROM mohaseeb/raspberrypi3-python-opencv:latest
+FROM mohaseeb/raspberrypi3-python-opencv:3.4.2
 
 WORKDIR /code
 
@@ -9,7 +9,7 @@ RUN apt-get update \
 
 RUN pip install --no-cache-dir -U pip wheel setuptools 
 RUN pip install --no-cache-dir -r requirements.txt 
- 
+
 COPY . .
 
 CMD ["usermod -a -G video root"]
