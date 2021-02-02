@@ -1,4 +1,4 @@
-FROM mohaseeb/raspberrypi3-python-opencv:3.4.2
+FROM dymat/opencv:arm32v7
 
 WORKDIR /code
 
