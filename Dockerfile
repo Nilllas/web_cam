@@ -4,10 +4,8 @@ WORKDIR /code
 
 ENV READTHEDOCS=True
  
-COPY requirements.txt .
-RUN pip install -r requirements.txt
-
 COPY . .
+RUN pip install -r /code/requirements.txt
 
 CMD ["usermod -a -G video root"]
 CMD ["modprobe bcm2835-v4l2"]
