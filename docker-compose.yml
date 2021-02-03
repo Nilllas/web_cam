@@ -1,6 +1,6 @@
 version: "3.9"
 services:
-  web_cam:
+  web_cam_2:
     container_name: web_cam
     build:
       context: .
@@ -15,7 +15,7 @@ services:
       FLASK_ENV: development
       LD_LIBRARY_PATH: /opt/vc/lib
       DISPLAY:
-    image: web_cam
+    image: web_cam_2
     devices: 
         - "/dev/video0:/dev/video0"
         - "/dev/vchiq:/dev/vchiq"
